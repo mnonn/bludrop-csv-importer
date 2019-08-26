@@ -1,1 +1,14 @@
+<div class="app-header">
+    <div
+        [routerLink]="['/']"
+        routerLinkActive="router-link-active"
+        class="navigate-back"
+        *ngIf="!isLanding"
+    >
+        <i class="material-icons">arrow_back</i>
+        <span>{{ 'NAVIGATE.BACK' | translate }}</span>
+    </div>
+    <div class="app-title">{{ 'PAGES.APP.TITLE' | translate }}</div>
+</div>
+
 <router-outlet></router-outlet>

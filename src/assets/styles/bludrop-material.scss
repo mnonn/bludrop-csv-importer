@@ -1,0 +1,11 @@
+@mixin bludrop-apply-theme($theme, $themeStr) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $textcolor: map-get($primary, 500);
+    $errorTextColor: map-get($warn, 700);
+
+    .bludrop {
+        background-color: mat-color($mat-grey, 200);
+    }
+}

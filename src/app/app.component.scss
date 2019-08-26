@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+@mixin apply-app-theme($theme, $themeStr) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    .app-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        font-size: 30px;
+        padding: 19px;
+        background-color: mat-color($primary);
+        color: mat-color($accent);
+
+        @include mat-elevation(2);
+
+        .app-title {
+          @include text-title;
+        }
+    }
+}

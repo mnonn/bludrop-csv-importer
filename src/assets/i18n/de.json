@@ -1,0 +1,18 @@
+{
+    "PAGES": {
+        "APP": {
+            "TITLE": "BluDrop Organizer"
+        },
+        "LISTS": {
+            "TITLE": "Listen",
+            "DESC": "Lesen sie CSV-Dateien ein und organisieren sie die Daten in übersichtlichen Listen"
+        },
+        "CSV": {
+            "UPLOAD": "Datei hochladen"
+        }
+    },
+    "NAVIGATE": {
+        "BACK": "Zurück"
+    }
+  }
+  

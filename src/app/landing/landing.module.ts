@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +14,6 @@ const materialComponents = [MatButtonModule, MatGridListModule, MatCardModule];
 
 @NgModule({
     declarations: [NavGridComponent],
-    imports: [CommonModule, LandingRoutingModule, materialComponents]
+    imports: [CommonModule, LandingRoutingModule, materialComponents, SharedModule]
 })
 export class LandingModule {}

@@ -1,0 +1,15 @@
+.navigate-back {
+    position: fixed;
+    left: 25px;
+    top: 33px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include navigate-link;
+}
+
+
+.grid-list-box{
+    margin: 65px;
+}

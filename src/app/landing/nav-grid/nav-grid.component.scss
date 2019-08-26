@@ -1,0 +1,8 @@
+@mixin nav-grid-apply-theme($theme, $themeStr) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    mat-card {
+        @include navigate-link;
+    }
+}

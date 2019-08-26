@@ -25,7 +25,9 @@
               "src/favicon.512x512.png"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+              "src/assets/styles/bludrop-theme.scss"
             ],
             "scripts": []
           },

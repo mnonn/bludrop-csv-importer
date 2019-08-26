@@ -1,11 +1,58 @@
-<mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-        <mat-card [routerLink]="['/lists']" routerLinkActive="router-link-active" >
-            <mat-card-title>Hello</mat-card-title>
-            <mat-card-content>dsfklsjkjfsfs</mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
-    <!-- <mat-grid-tile
+<div class="grid-list-box">
+    <mat-grid-list cols="2" rowHeight="3:1" gutterSize="50px">
+        <mat-grid-tile>
+            <mat-card
+                [routerLink]="['/lists']"
+                routerLinkActive="router-link-active"
+            >
+                <mat-card-title>{{
+                    'PAGES.LISTS.TITLE' | translate
+                }}</mat-card-title>
+                <mat-card-content>{{
+                    'PAGES.LISTS.DESC' | translate
+                }}</mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card
+                [routerLink]="['/lists']"
+                routerLinkActive="router-link-active"
+            >
+                <mat-card-title>{{
+                    'PAGES.LISTS.TITLE' | translate
+                }}</mat-card-title>
+                <mat-card-content>{{
+                    'PAGES.LISTS.DESC' | translate
+                }}</mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card
+                [routerLink]="['/lists']"
+                routerLinkActive="router-link-active"
+            >
+                <mat-card-title>{{
+                    'PAGES.LISTS.TITLE' | translate
+                }}</mat-card-title>
+                <mat-card-content>{{
+                    'PAGES.LISTS.DESC' | translate
+                }}</mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card
+                [routerLink]="['/lists']"
+                routerLinkActive="router-link-active"
+            >
+                <mat-card-title>{{
+                    'PAGES.LISTS.TITLE' | translate
+                }}</mat-card-title>
+                <mat-card-content>{{
+                    'PAGES.LISTS.DESC' | translate
+                }}</mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <!-- <mat-grid-tile
         ><mat-card>
             <mat-card-title>Hello</mat-card-title>
             <mat-card-content>dsfklsjkjfsfs</mat-card-content>
@@ -23,4 +70,5 @@
             <mat-card-content>dsfklsjkjfsfs</mat-card-content>
         </mat-card></mat-grid-tile
     > -->
-</mat-grid-list>
+    </mat-grid-list>
+</div>

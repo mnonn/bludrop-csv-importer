@@ -1,1 +1,6 @@
-<p>csv works!</p>
+<div class="list-add-file">
+    <button mat-fab class="material-icons" (click)="inputFile.click()">
+        <mat-icon>file_upload</mat-icon>
+    </button>
+    <input class="none" #inputFile type="file" (change)="handleFileInput($event.target.files)"/>
+</div>
