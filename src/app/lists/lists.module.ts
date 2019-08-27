@@ -1,6 +1,9 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { ListsRoutingModule } from './lists-routing.module';
 import { CsvComponent } from './csv/csv.component';
 import { CSVParserService } from './csv/csv-parser.service';
-
 
 const SERVICES = [CSVParserService];
 
@@ -20,7 +22,9 @@ const SERVICES = [CSVParserService];
         SharedModule,
         MatButtonModule,
         MatIconModule,
-        MatTableModule
+        MatTableModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
     providers: [SERVICES]
 })

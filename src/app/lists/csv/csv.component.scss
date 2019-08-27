@@ -1,4 +1,33 @@
-.list-add-file{
-    margin-top: 22%;
-    margin-left: 48%;
+.list-add-file {
+    position: fixed;
+    top: 90%;
+    left: 94%;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 90px;
+
+    .mat-form-field {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+
+        .table-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            i {
+                padding-right: 10px;
+                font-size: 17px;
+            }
+        }
+    }
 }

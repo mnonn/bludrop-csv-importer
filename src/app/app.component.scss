@@ -5,19 +5,28 @@
     $accent: map-get($theme, accent);
 
     .app-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
+        height: 5%;
         font-size: 30px;
         padding: 19px;
         background-color: mat-color($primary);
         color: mat-color($accent);
 
-        @include mat-elevation(2);
+        @include mat-elevation(8);
 
         .app-title {
-          @include text-title;
+            @include text-title;
         }
+    }
+
+    .app-content {
+        position: relative;
+        top: 50px;
     }
 }
