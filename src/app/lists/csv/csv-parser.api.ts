@@ -1,8 +1,4 @@
-export interface ParserOutput {
-    headers: 
-}
-
-export class ListHeader {
-    type: any;
-    label: string;
+export interface TableData {
+    headers: string[];
+    rows: Object[];
 }

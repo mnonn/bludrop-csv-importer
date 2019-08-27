@@ -1,5 +1,6 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,9 +9,8 @@ import { ListsRoutingModule } from './lists-routing.module';
 import { CsvComponent } from './csv/csv.component';
 import { CSVParserService } from './csv/csv-parser.service';
 
-const SERVICES = [
-    CSVParserService
-]
+
+const SERVICES = [CSVParserService];
 
 @NgModule({
     declarations: [CsvComponent],
@@ -19,7 +19,8 @@ const SERVICES = [
         ListsRoutingModule,
         SharedModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        MatTableModule
     ],
     providers: [SERVICES]
 })
