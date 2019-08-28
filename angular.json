@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bludrop-csv-importer": {
+    "bludrop-toolbox": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -71,21 +71,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bludrop-csv-importer:build"
+            "browserTarget": "bludrop-toolbox:build"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "bludrop-csv-importer:build:dev"
+              "browserTarget": "bludrop-toolbox:build:dev"
             },
             "production": {
-              "browserTarget": "bludrop-csv-importer:build:production"
+              "browserTarget": "bludrop-toolbox:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bludrop-csv-importer:build"
+            "browserTarget": "bludrop-toolbox:build"
           }
         },
         "test": {
@@ -123,7 +123,7 @@
         }
       }
     },
-    "bludrop-csv-importer-e2e": {
+    "bludrop-toolbox-e2e": {
       "root": "e2e",
       "projectType": "application",
       "architect": {
@@ -141,7 +141,7 @@
       }
     }
   },
-  "defaultProject": "bludrop-csv-importer",
+  "defaultProject": "bludrop-toolbox",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

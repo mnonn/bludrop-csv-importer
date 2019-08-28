@@ -3,7 +3,7 @@ import {SpectronClient} from 'spectron';
 
 import commonSetup from './common-setup';
 
-describe('bludrop-csv-importer App', function () {
+describe('bludrop-toolbox App', function () {
   commonSetup.apply(this);
 
   let browser: any;
