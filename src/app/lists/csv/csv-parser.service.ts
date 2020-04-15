@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { TableData } from './csv-parser.api';
+import { UtilService } from '../../util/util.service';
 
 @Injectable()
 export class CSVParserService {
-    constructor() {}
+    constructor(private util: UtilService) { }
 
     parseCSVContent(fileContent: string): TableData {
         const output = [];
@@ -17,7 +18,11 @@ export class CSVParserService {
     getTableData(array: string[][]): TableData {
         const output = [];
         for (let i = 1; i < array.length; i++) {
-            output[i - 1] = this.getRowObject(array[0], array[i]);
+            const row = this.getRowObject(array[0], array[i]);
+            if (this.util.isEmpty(row)) {
+                continue;
+            }
+            output.push(row);
         }
         const temp = { headers: array[0], rows: output };
         console.log(temp);

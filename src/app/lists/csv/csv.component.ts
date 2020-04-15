@@ -24,7 +24,7 @@ export class CsvComponent implements OnInit {
             const reader = new FileReader();
             reader.onload = event => {
                 this.tableData = this.csvParser.parseCSVContent(
-                    event.target['result']
+                    event.target['result'] as string
                 );
                 this.origData = {
                     headers: [].concat(this.tableData.headers),
@@ -67,6 +67,7 @@ export class CsvComponent implements OnInit {
             this.sorting.push(sort);
         }
         this.tableData.rows.sort((a: Object, b: Object) => {
+            // FIXME lol
             if (a[attr] > b[attr]) {
                 return sort.sortType === SortType.ASC ? 1 : -1;
             } else if (a[attr] < b[attr]) {
