@@ -85,8 +85,7 @@
   "dependencies": {
     "@angular/animations": "^10.0.0-next.1",
     "@angular/cdk": "^9.2.1",
-    "@angular/material": "^8.1.3",
-    "hammerjs": "^2.0.8",
+    "@angular/material": "^9.2.1",
     "roboto-fontface": "^0.10.0",
     "tslib": "^1.10.0"
   }
