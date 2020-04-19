@@ -11,11 +11,13 @@ import { CommonModule } from '@angular/common';
 import { ListsRoutingModule } from './lists-routing.module';
 import { CsvComponent } from './csv/csv.component';
 import { CSVParserService } from './csv/csv-parser.service';
+import { ListsOverviewComponent } from './overview/lists-overview.component';
 
 const SERVICES = [CSVParserService];
+const COMPONENTS = [CsvComponent, ListsOverviewComponent]
 
 @NgModule({
-    declarations: [CsvComponent],
+    declarations: [COMPONENTS],
     imports: [
         CommonModule,
         ListsRoutingModule,
@@ -28,4 +30,4 @@ const SERVICES = [CSVParserService];
     ],
     providers: [SERVICES]
 })
-export class ListsModule {}
+export class ListsModule { }

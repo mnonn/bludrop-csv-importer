@@ -1,6 +1,8 @@
 import { CSVParserService } from './csv-parser.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TableData, SortHelper, SortType } from './csv-parser.api';
+import { ListObj } from '../lists.api';
+
 
 @Component({
     selector: 'app-csv',
@@ -8,38 +10,47 @@ import { TableData, SortHelper, SortType } from './csv-parser.api';
     styleUrls: ['./csv.component.scss']
 })
 export class CsvComponent implements OnInit {
-    tableData: TableData;
-    origData: TableData;
+
+    @Input()
+    list: ListObj;
+
     sorting: SortHelper[];
 
     constructor(private csvParser: CSVParserService) {
         this.sorting = [];
     }
 
-    ngOnInit() {}
-
-    handleFileInput(file: FileList) {
-        if (file.length > 0) {
-            const fileContent = file[0];
-            const reader = new FileReader();
-            reader.onload = event => {
-                this.tableData = this.csvParser.parseCSVContent(
-                    event.target['result'] as string
-                );
-                this.origData = {
-                    headers: [].concat(this.tableData.headers),
-                    rows: [].concat(this.tableData.rows)
-                };
-            };
-            reader.readAsText(fileContent);
-        }
+    ngOnInit() {
     }
+
+    // handleFileInput(file: FileList) {
+    //     if (file.length > 0) {
+    //         const fileContent = file[0];
+    //         const reader = new FileReader();
+    //         reader.onload = event => {
+    //             const workbook = XLSX.read(event.target.result, { type: 'array' });
+    //             const resultData = XLSX.utils.sheet_to_csv(workbook.Sheets[workbook.SheetNames[0]]);
+    //             this.tableData = this.csvParser.parseCSVContent(
+    //                 resultData
+    //             );
+    //             this.origData = {
+    //                 headers: [].concat(this.tableData.headers),
+    //                 rows: [].concat(this.tableData.rows)
+    //             };
+    //             const filePicker = document.getElementById('inputFile');
+    //             if(filePicker) {
+    //                 filePicker['value'] = '';
+    //             }
+    //         };
+    //         reader.readAsArrayBuffer(fileContent);
+    //     }
+    // }
 
     applyFilter(query: string) {
         if (!query || query.length === 0) {
-            this.tableData.rows = [].concat(this.origData.rows);
+            this.list.tableData.rows = [].concat(this.list.tableDataOrig.rows);
         }
-        this.tableData.rows = this.origData.rows.filter(row => {
+        this.list.tableData.rows = this.list.tableDataOrig.rows.filter(row => {
             for (const value in row) {
                 if (value && row[value]) {
                     if (
@@ -66,7 +77,7 @@ export class CsvComponent implements OnInit {
             sort = new SortHelper(attr);
             this.sorting.push(sort);
         }
-        this.tableData.rows.sort((a: Object, b: Object) => {
+        this.list.tableData.rows.sort((a: Object, b: Object) => {
             // FIXME lol
             if (a[attr] > b[attr]) {
                 return sort.sortType === SortType.ASC ? 1 : -1;
@@ -76,6 +87,6 @@ export class CsvComponent implements OnInit {
                 return 0;
             }
         });
-        this.tableData.rows = [].concat(this.tableData.rows);
+        this.list.tableData.rows = [].concat(this.list.tableData.rows);
     }
 }

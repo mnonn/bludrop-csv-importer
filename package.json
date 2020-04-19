@@ -87,6 +87,7 @@
     "@angular/cdk": "^9.2.1",
     "@angular/material": "^9.2.1",
     "roboto-fontface": "^0.10.0",
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "xlsx": "^0.15.6"
   }
 }

@@ -1,0 +1,21 @@
+<div class="lists-overview">
+    <div class="list-add-file">
+        <button mat-fab class="material-icons" (click)="inputFile.click()">
+            <mat-icon>file_upload</mat-icon>
+        </button>
+        <input
+            class="none"
+            #inputFile
+            id="inputFile"
+            type="file"
+            (change)="handleFileInput($event.target.files)"
+        />
+    </div>
+    <div class="lists-grid">
+        <div class="list-row" *ngFor="let list of lists" (click)="selectList(list)">
+            <span>{{ list.name }}</span>
+        </div>
+    </div>
+
+    <app-csv [list]="selectedList"></app-csv>
+</div>
