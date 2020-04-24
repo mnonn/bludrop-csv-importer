@@ -1,7 +1,24 @@
+@import "~@angular/material/theming";
+
 .list-add-file {
     position: fixed;
     top: 90%;
     left: 94%;
+}
+
+.csv-header-input {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    opacity: 0.97;
+    .mat-form-field {
+        width: 80%;
+        font-size: 14px;
+    }
+    @include mat-elevation(8);
 }
 
 .table-container {
@@ -9,12 +26,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 90px;
-
-    .mat-form-field {
-        font-size: 14px;
-        width: 100%;
-    }
+    margin: 10px;
 
     table {
         width: 100%;

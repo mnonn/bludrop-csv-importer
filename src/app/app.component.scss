@@ -1,32 +1,45 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 @mixin apply-app-theme($theme, $themeStr) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
 
-    .app-header {
-        position: fixed;
-        top: 0;
+    .app-container {
+        display: grid;
         width: 100%;
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 5%;
-        font-size: 30px;
-        padding: 19px;
-        background-color: mat-color($primary);
-        color: mat-color($accent);
+        height: 100%;
+        grid-template-areas:
+            "head"
+            "main"
+            "foot";
+        grid-template-rows: 70px 1fr 30px;
 
-        @include mat-elevation(8);
+        .app-header {
+            grid-area: "head";
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            background-color: mat-color($primary);
+            color: mat-color($accent);
 
-        .app-title {
-            @include text-title;
+            @include mat-elevation(8);
+
+            .app-title {
+                @include text-title;
+            }
         }
-    }
 
-    .app-content {
-        position: relative;
-        top: 50px;
+        .app-content {
+            grid-area: "main";
+            overflow-x: auto;
+        }
+
+        .app-footer {
+            grid-area: "foot";
+            background-color: mat-color($primary);
+            @include mat-elevation(8);
+        }
     }
 }

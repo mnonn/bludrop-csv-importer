@@ -10,14 +10,17 @@
     />
 </div>
 
-<div class="table-container" *ngIf="tableData">
-    <mat-form-field>
+<div class="csv-header-input">
+    <mat-form-field class="csv-filter-input">
         <input
             matInput
             (keyup)="applyFilter($event.target.value)"
             placeholder="Filter"
         />
     </mat-form-field>
+
+</div>
+<div class="table-container" *ngIf="tableData">
     <table mat-table [dataSource]="tableData?.rows" class="mat-elevation-z8">
         <ng-container
             [matColumnDef]="column"
@@ -27,7 +30,7 @@
             <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="tableData?.headers"></tr>
+        <tr mat-header-row *matHeaderRowDef="tableData?.headers; sticky: true " ></tr>
         <tr mat-row *matRowDef="let row; columns: tableData?.headers"></tr>
     </table>
 </div>
