@@ -1,8 +1,13 @@
 @mixin text-title {
     font-size: 30px;
     font-weight: 600;
+    margin: auto;
 }
 
 @mixin navigate-link {
     cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
 }

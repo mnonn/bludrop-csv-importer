@@ -1,16 +1,20 @@
-<div class="app-header">
-    <div
-        [routerLink]="['/']"
-        routerLinkActive="router-link-active"
-        class="navigate-back"
-        *ngIf="!isLanding"
-    >
-        <i class="material-icons">arrow_back</i>
-        <span>{{ 'NAVIGATE.BACK' | translate }}</span>
+<div class="app-container">
+    <div class="app-header">
+        <div
+            [routerLink]="['/']"
+            routerLinkActive="router-link-active"
+            class="navigate-back"
+            [ngStyle]="{ visibility: isLanding ? 'hidden' : 'visible' }"
+        >
+            <i class="material-icons">arrow_back</i>
+            <span>{{ "NAVIGATE.BACK" | translate }}</span>
+        </div>
+        <div class="app-title">{{ "PAGES.APP.TITLE" | translate }}</div>
     </div>
-    <div class="app-title">{{ 'PAGES.APP.TITLE' | translate }}</div>
-</div>
 
-<div class="app-content">
-    <router-outlet></router-outlet>
+    <div class="app-content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="app-footer"></div>
 </div>
